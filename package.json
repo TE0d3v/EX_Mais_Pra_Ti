@@ -1,0 +1,15 @@
+{
+  "name": "ex_maisprati",
+  "version": "1.0.0",
+  "description": "Este repositório contém materiais de estudo, exercícios práticos e códigos desenvolvidos durante o curso da **MaisPraTI**. O objetivo é consolidar os conhecimentos adquiridos ao longo das aulas, com foco em lógica de programação e desenvolvimento em JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
