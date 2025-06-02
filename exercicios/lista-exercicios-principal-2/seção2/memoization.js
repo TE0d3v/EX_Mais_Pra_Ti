@@ -13,24 +13,28 @@ function memoize(fn) {
         
         // Verifica se o resultado já está no cache
         if (cache.has(key)) {
-            console.log('Retornando do cache:', key);
+            // console.log('Retornando do cache:', key);
             return cache.get(key);
         }
         
         // Se não estiver no cache, calcula e armazena
-        console.log('Calculando novo valor para:', key);
-        const result = fn(...args);
+        // console.log('Calculando novo valor para:', key);
+        const result = fn.apply(this, args);
         cache.set(key, result);
         
         return result;
     };
 }
 
-const fibonacci = memoize((n) => {
-    if (n <= 1) {
-        return 1;
-    }
-    return fibonacci(n - 1) + fibonacci(n - 2);
-});
+function fibbo(n){
+    if (n < 2) return n;
+    return fibbo( n - 1 ) + fibbo ( n - 2 );
+}
 
-console.log(fibonacci(10));
+const Ffibbo = memoize(function fibbo(n){
+    if (n < 2) return n;
+    return Ffibbo(n - 1) + Ffibbo( n - 2 );
+})
+
+console.log(Ffibbo(10));
+console.log(fibbo(10));
