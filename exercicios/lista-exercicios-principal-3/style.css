@@ -1,0 +1,97 @@
+/* exercicios/lista-exercicios-principal-3/style.css */
+
+/* 
+  Cria um container com display grid, 
+  com 1 coluna e 3 linhas, 
+  onde a primeira linha tem 100px de altura, 
+  a segunda linha tem altura automática e 
+  a terceira linha tem 50px de altura. 
+  A altura total do container é de 100vh (100% da altura da viewport).
+  O espaçamento entre os elementos é de 10px.
+*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr 50px;
+    height: 100vh;
+    width: 100vw;
+    gap: 10px;
+}
+
+/* 
+  Cabeçalho ocupa toda a largura do container 
+  e tem fundo preto e texto branco.
+  O padding é de 20px.
+  O texto é centralizado.
+*/
+.header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* 
+  Main ocupa a única coluna disponível
+  e tem padding de 20px.
+*/
+.main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* 
+  Rodapé ocupa toda a largura do container 
+  e tem fundo preto e texto branco.
+  O padding é de 10px.
+  O texto é centralizado.
+*/
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* 
+  Cada seção dentro do main tem um espaçamento de 20px na parte inferior.
+*/
+main>section {
+    margin-bottom: 20px;
+}
+
+/* 
+  O título (h1) dentro do main não tem margem na parte superior.
+*/
+h1 {
+    margin-top: 0;
+}
+
+/* 
+  Cada parágrafo (p) dentro do main tem um espaçamento de 10px na parte inferior.
+*/
+p {
+    margin-bottom: 10px;
+}
+h2 {
+    font-size: 1.2em;
+    text-decoration: underline;
+}
+
+.destaque {
+    font-style: italic;
+    background-color: #f5f5f5;
+}
+
+#importante {
+    border-top: 3px solid #333;
+}
+
