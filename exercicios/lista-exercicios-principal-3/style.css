@@ -1,97 +1,291 @@
-/* exercicios/lista-exercicios-principal-3/style.css */
-
-/* 
-  Cria um container com display grid, 
-  com 1 coluna e 3 linhas, 
-  onde a primeira linha tem 100px de altura, 
-  a segunda linha tem altura automática e 
-  a terceira linha tem 50px de altura. 
-  A altura total do container é de 100vh (100% da altura da viewport).
-  O espaçamento entre os elementos é de 10px.
-*/
-*{
+/* =================================
+   1. GERAL, RESET & TIPOGRAFIA
+   ================================= */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 100px 1fr 50px;
-    height: 100vh;
-    width: 100vw;
-    gap: 10px;
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
 }
 
-/* 
-  Cabeçalho ocupa toda a largura do container 
-  e tem fundo preto e texto branco.
-  O padding é de 20px.
-  O texto é centralizado.
-*/
-.header {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
+h1, h2 {
+    color: #333;
+    margin-bottom: 15px;
 }
 
-/* 
-  Main ocupa a única coluna disponível
-  e tem padding de 20px.
-*/
-.main {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-/* 
-  Rodapé ocupa toda a largura do container 
-  e tem fundo preto e texto branco.
-  O padding é de 10px.
-  O texto é centralizado.
-*/
-.footer {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    text-align: center;
-}
-
-/* 
-  Cada seção dentro do main tem um espaçamento de 20px na parte inferior.
-*/
-main>section {
-    margin-bottom: 20px;
-}
-
-/* 
-  O título (h1) dentro do main não tem margem na parte superior.
-*/
-h1 {
-    margin-top: 0;
-}
-
-/* 
-  Cada parágrafo (p) dentro do main tem um espaçamento de 10px na parte inferior.
-*/
 p {
     margin-bottom: 10px;
+    color: #666;
 }
-h2 {
-    font-size: 1.2em;
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
     text-decoration: underline;
 }
 
-.destaque {
-    font-style: italic;
-    background-color: #f5f5f5;
+/* =================================
+   2. LAYOUT PRINCIPAL (CONTAINER, HEADER, FOOTER)
+   ================================= */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
 }
 
-#importante {
-    border-top: 3px solid #333;
+.header, .footer {
+    text-align: center;
+    padding: 20px 0;
+    padding-bottom: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border-radius: 8px;
 }
 
+.header {
+    margin-bottom: 20px;
+    position: relative; /* Para posicionar o menu dropdown */
+}
+
+.footer {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+main section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+/* =================================
+   3. PÁGINA DE FEEDBACK (feedback.html)
+   ================================= */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto; /* Centraliza o formulário dentro da section */
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+.form-group textarea {
+    resize: vertical;
+    height: 120px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+}
+
+/* =================================
+   4. PÁGINA DE GALERIA (flexbox&grid.html)
+   ================================= */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    background-color: transparent; /* Remove o fundo da section para a galeria */
+    box-shadow: none;
+    padding: 0;
+}
+
+.gallery figure {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0; /* Reseta a margem padrão da tag figure */
+    background-color: #fff;
+}
+
+.gallery figure:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery figcaption {
+    padding: 15px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* =================================
+   5. PÁGINA DE LISTAS (listas.html)
+   ================================= */
+.lista ul, .lista ol {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.lista li {
+    margin-bottom: 8px;
+}
+
+.lista .links-uteis {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* =================================
+   6. NAVEGAÇÃO & MENU HAMBURGER
+   ================================= */
+.main-nav {
+    padding: 10px 0;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    font-weight: 500;
+    font-size: 1em;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a:focus {
+    background-color: #e9ecef;
+    text-decoration: none;
+    color: #0056b3;
+}
+
+.hamburger {
+    display: none; /* Escondido em telas maiores */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 25px; /* Ajustar conforme o padding do header */
+    right: 20px;
+    z-index: 1000;
+}
+
+.hamburger-line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* =================================
+   7. RESPONSIVIDADE (Telas <= 600px)
+   ================================= */
+@media (max-width: 600px) {
+    .header {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .nav-links {
+        display: none; /* Esconde os links por padrão */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%; /* Posiciona abaixo do header */
+        left: 0;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        padding: 10px 0;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+
+    .nav-links.active {
+        display: flex; /* Mostra os links quando o menu está ativo */
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 15px;
+        width: 100%;
+    }
+
+    .hamburger {
+        display: block; /* Mostra o botão hamburger */
+    }
+}

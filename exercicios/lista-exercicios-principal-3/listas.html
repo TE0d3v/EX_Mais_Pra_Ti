@@ -3,10 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
     <div class="container">
+        <header class="header">
+            <h1>Listas e Links</h1>
+            <!-- HAMBURGER BUTTON -->
+            <button class="hamburger" id="hamburger-button" aria-label="Abrir menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <!-- NAVIGATION -->
+            <nav class="main-nav">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="flexbox&grid.html">Galeria</a></li>
+                    <li><a href="listas.html">Listas</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </nav>
+        </header>
         <main class="main">
             <section class="lista">
                 <h2>Meus hobbies</h2>
@@ -26,7 +45,7 @@
                     <li>Despeje a massa na forma preparada.</li>
                     <li>Asse no forno por 30 minutos ou até dourar.</li>
                 </ol>
-                <nav>
+                <nav class="links-uteis">
                     <a href="https://www.youtube.com/watch?v=ESzZEQz77_I">youtube do nitrão</a>
                     <a href="https://chat.deepseek.com/a/chat/s/c037fb4e-85f1-4344-87e7-41964c3df5a8">Deepseek</a>
                     <a href="https://www.twitch.tv">twitch</a>
@@ -34,5 +53,6 @@
             </section>
         </main>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

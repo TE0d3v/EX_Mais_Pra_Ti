@@ -4,95 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de Feedback</title>
-    <!-- deixei o estilo aqui mesmo pra n fazer muito arquivo -->
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f4f4f9;
-        }
-        .container {
-            width: 100%;
-            max-width: 600px;
-            background-color: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .form-header h1 {
-            margin: 0 0 10px;
-            color: #333;
-            font-size: 24px;
-            text-align: center;
-        }
-        .form-header p {
-            text-align: center;
-            color: #666;
-            margin-bottom: 20px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            color: #555;
-        }
-        .form-group input, .form-group select, .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-        .form-group textarea {
-            resize: vertical;
-            height: 100px;
-        }
-        .submit-btn {
-            width: 100%;
-            padding: 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
-        }
-        .submit-btn:hover {
-            background-color: #0056b3;
-        }
-        .form-footer {
-            text-align: center;
-            margin-top: 20px;
-            color: #666;
-        }
-        .form-footer a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        .form-footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
+        <header class="header">
+            <h1>Formulário de Feedback</h1>
+            <!-- HAMBURGER BUTTON -->
+            <button class="hamburger" id="hamburger-button" aria-label="Abrir menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <!-- NAVIGATION -->
+            <nav class="main-nav">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="flexbox&grid.html">Galeria</a></li>
+                    <li><a href="listas.html">Listas</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </nav>
+        </header>
         <main>
             <section class="feedback">
                 <div class="form-container">
                     <div class="form-header">
-                        <h1>Formulário de Feedback</h1>
                         <p>Preencha todos os campos abaixo</p>
                     </div>
 
@@ -138,6 +75,6 @@
             </section>
         </main>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
-
